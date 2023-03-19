@@ -1,0 +1,49 @@
+.movie-container {
+  display: inline-flex;
+  border-radius: 15px;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+  padding: 3%;
+  width: 94%;
+  height: 100%;
+  background-color: var(--color-primary);
+  color: #FFFFFF;
+}
+
+#poster-container {
+  display: inline;
+  justify-content: left;
+  align-items: center;
+}
+
+#poster-container img {
+  width: 70%;
+  border-radius: 15px;
+}
+
+
+#movie-info-container {
+  display: inline;
+  justify-content: right;
+  align-items: center;
+  width: 70%;
+  height: 60%;
+}
+
+#movie-title {
+  font-size: 2rem;
+  font-weight: bolder;
+}
+
+#movie-genres, #movie-runtime, #movie-rating, #movie-score {
+  display: inline;
+  font-size: 1.1rem;
+  padding-right: 30px;
+  font-weight: bold;
+}
+
+.movie-container:hover {
+    background-color: rgba(75, 16, 108, 0.9);
+}
