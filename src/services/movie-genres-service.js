@@ -19,10 +19,15 @@ const getMovieGenreByGenreName = async (name) => {
   });
 };
 
+const getAllGenres = async () => {
+  return await axios.get(API_URL + "/genres", { headers: authHeader() });
+};
+
 const movieGenreService = {
   getAllMovieGenres,
   getMovieGenreByMovieId,
   getMovieGenreByGenreName,
+  getAllGenres,
 };
 
 export default movieGenreService;

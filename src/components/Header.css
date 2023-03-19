@@ -1,5 +1,6 @@
 .header-container {
   position: sticky;
+  z-index: 999;
   top: 0;
   background-color: var(--color-tertiary) ;
   display: flex;
