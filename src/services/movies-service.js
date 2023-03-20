@@ -7,8 +7,8 @@ const getAllMovies = async () => {
   return await axios.get(API_URL + "/movies", { headers: authHeader() });
 };
 
-const getMovie = (id) => {
-  return axios.get(API_URL + `/movies/${id}`, { headers: authHeader() });
+const getMovie = async (id) => {
+  return await axios.get(API_URL + `/movies/${id}`, { headers: authHeader() });
 };
 
 const movieService = {

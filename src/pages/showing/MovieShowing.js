@@ -4,11 +4,14 @@ import movieGenreService from "../../services/movie-genres-service.js";
 import movieActorService from "../../services/movie-actors-service";
 import movieDirectorService from "../../services/movie-directors-service";
 import { useNavigate } from "react-router-dom";
+import placeHolderPoster from "../../components/posters/poster-placeholder.jpg";
 
 export default function MovieShowing({ movie }) {
   const [movieGenres, setMovieGenres] = useState([]);
   const [movieActors, setMovieActors] = useState([]);
   const [movieDirectors, setMovieDirectors] = useState([]);
+
+  const URL = "http://localhost:3000/";
 
   const navigate = useNavigate();
 
@@ -58,7 +61,7 @@ export default function MovieShowing({ movie }) {
         <div id="poster-container">
           <img
             id="poster"
-            src="https://upload.wikimedia.org/wikipedia/en/3/30/Ant-Man_and_the_Wasp_Quantumania_poster.jpg"
+            src={movie.picturePath !== null ? URL + movie.picturePath : placeHolderPoster}
             alt={movie.title + " poster"}
           />
         </div>
