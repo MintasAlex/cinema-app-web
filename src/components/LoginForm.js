@@ -36,14 +36,14 @@ export default function Login() {
     <form className="login-form-container" onSubmit={handleLogin}>
       <TextField
         className="textfield"
-        // id="outlined-required"
+        id="login-username-input"
         label="Username"
         value={username}
         onChange={(e) => setUsername(e.target.value)}
       />
       <TextField
         className="textfield"
-        // id="outlined-password-input"
+        id="login-password-input"
         label="Password"
         type="password"
         value={password}
