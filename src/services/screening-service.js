@@ -3,18 +3,18 @@ import authHeader from "./auth-header";
 
 const API_URL = "http://localhost:8080";
 
-const getAllScreenings = async () => {
-  return await axios.get(API_URL + "/screenings", { headers: authHeader() });
+const getAllScreenings = () => {
+  return axios.get(API_URL + "/screenings", { headers: authHeader() });
 };
 
-const getScreening = async (id) => {
-  return await axios.get(API_URL + `/screenings/${id}`, {
+const getScreening = (id) => {
+  return axios.get(API_URL + `/screenings/${id}`, {
     headers: authHeader(),
   });
 };
 
-const getScreeningsByMovieId = async (id) => {
-  return await axios.get(API_URL + `/screenings/movie/${id}`, {
+const getScreeningsByMovieId = (id) => {
+  return axios.get(API_URL + `/screenings/movie/${id}`, {
     headers: authHeader(),
   });
 };

@@ -1,0 +1,44 @@
+#screening-page-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  width: 100%;
+  background-color: var(--color-primary);
+}
+
+#screening-details-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: 2%;
+  padding: 3%;
+  border-radius: 15px;
+  width: 70%;
+  height: 100%;
+  background-color: var(--color-tertiary);
+  color: var(--color-primary);
+}
+
+#screening-seats-container{
+    display: grid;
+    grid-template-columns: auto auto auto auto auto auto auto auto auto auto;
+    width: 500px;
+    height: 500px;
+    border: 1px solid black;
+}
+
+#screening-seats-container div{
+    border: 1px solid black;
+    width: 48px;
+    height: 48px;
+}
+
+#screening-seats-container div p{
+    font-size: 1rem;
+    text-align: center;
+    font-weight: bold;
+    pointer-events: none;
+}

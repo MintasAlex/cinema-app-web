@@ -12,6 +12,7 @@ import screeningService from "../../services/screening-service";
 import List from "@mui/material/List";
 import ListItem from "@mui/material/ListItem";
 import ListItemText from "@mui/material/ListItemText";
+import {Link} from "react-router-dom";
 
 export default function MovieDetails() {
   const URL = "http://localhost:3000/";
@@ -102,9 +103,6 @@ export default function MovieDetails() {
     return date.toLocaleTimeString();
   };
 
-  const handleScreeningClick = () => {
-    navigate("/screening/" + movie.id);
-  }
 
   return (
     <>
@@ -181,7 +179,7 @@ export default function MovieDetails() {
               <List id="screenings-list">
                 {movie &&
                   screenings.map((screening, index) => (
-                    <ListItem className="screening-list-item" key={index} onClick={handleScreeningClick}>
+                    <ListItem className="screening-list-item" key={index} component={Link} to = {"/screening/"+screening.id}>
                       <ListItemText
                         primary={timestampToDate(screening.startTimestamp)}
                       />
