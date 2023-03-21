@@ -24,16 +24,29 @@ export default function Header() {
     window.location.reload();
   };
 
+  const handleMyBookignsClick = () => {
+    navigate("/mybookings");
+  };
+
+  const handleLogoClick = () => {
+    navigate("/");
+  };
+
   return (
     <div className="header-container">
-      <div className="logo-container">
+      <div className="logo-container" onClick={handleLogoClick}>
         <img className="logo" src={Logo} alt="logo"></img>
         <h1 id="header-h1">CinemaApp</h1>
       </div>
       {currentUser ? (
-        <Button className="button" variant="contained" onClick={logOut}>
-          Logout
-        </Button>
+        <div className="user-container">
+          <Button className="button" variant="contained" onClick={handleMyBookignsClick}>
+            My Bookings
+          </Button>
+          <Button className="button" variant="contained" onClick={logOut}>
+            Logout
+          </Button>
+        </div>
       ) : (
         <LoginForm></LoginForm>
       )}

@@ -13,6 +13,12 @@ const getBooking = (id) => {
   });
 };
 
+const getBookingsByUserId = (id) => {
+  return axios.get(API_URL + `/bookings/user/${id}`, {
+    headers: authHeader(),
+  });
+};
+
 const getBookingByScreeningId = (id) => {
   return axios.get(API_URL + `/bookings/screening/${id}`, {
     headers: authHeader(),
@@ -25,11 +31,19 @@ const createBooking = (booking) => {
   });
 };
 
+const deleteBooking = (id) => {
+  return axios.delete(API_URL + `/bookings/${id}`, {
+    headers: authHeader(),
+  });
+};
+
 const bookingsService = {
   getAllBookings,
   getBooking,
   getBookingByScreeningId,
   createBooking,
+  getBookingsByUserId,
+  deleteBooking,
 };
 
 export default bookingsService;

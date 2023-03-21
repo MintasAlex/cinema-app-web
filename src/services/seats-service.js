@@ -23,8 +23,20 @@ const getAllBookedSeatsByScreeningId = (id) => {
   });
 };
 
+const getBookedSeatsByBookingId = (id) => {
+  return axios.get(API_URL + `/seatBooked/${id}`, {
+    headers: authHeader(),
+  });
+};
+
 const createSeatBooked = (seatBooked) => {
   return axios.post(API_URL + `/seatBooked`, seatBooked, {
+    headers: authHeader(),
+  });
+};
+
+const deleteSeatBooked = (bookingId, seatId) => {
+  return axios.delete(API_URL + `/seatBooked/${bookingId}/${seatId}`, {
     headers: authHeader(),
   });
 };
@@ -35,6 +47,8 @@ const seatsService = {
   getAllBookedSeats,
   getAllBookedSeatsByScreeningId,
   createSeatBooked,
+  getBookedSeatsByBookingId,
+  deleteSeatBooked,
 };
 
 export default seatsService;

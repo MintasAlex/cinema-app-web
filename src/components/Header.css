@@ -29,6 +29,14 @@
   margin-right: 10px;
 }
 
+.user-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  height: 100px;
+  width: 20%;
+}
+
 
 
 

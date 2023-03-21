@@ -9,6 +9,7 @@ import Showing from "./pages/showing/Showing";
 import NotFound from "./pages/notfound/NotFound";
 import MovieDetails from "./pages/movie/MovieDetails";
 import ScreeningDetails from "./pages/screening/ScreeningDetails";
+import MyBookings from "./pages/myBookings/MyBookings";
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
           <Route path="/movie/:id" element={<MovieDetails />} />
           <Route path="*" element={<NotFound></NotFound>} />
           <Route path="/screening/:id" element={<ScreeningDetails />} />
+          <Route path="/mybookings" element={<MyBookings />} />
         </Routes>
       </ThemeProvider>
     </>
