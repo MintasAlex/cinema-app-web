@@ -3,6 +3,7 @@ import { useState, useEffect } from "react";
 import BookingsService from "../../services/booking-service";
 import SeatsService from "../../services/seats-service";
 import { DataGrid } from "@mui/x-data-grid";
+import Button from "@mui/material/Button";
 
 export default function MyBookings() {
   const [bookings, setBookings] = useState([]);
@@ -59,15 +60,46 @@ export default function MyBookings() {
     return date.toLocaleTimeString();
   };
 
-    const handleDelete = async (bookingId) => {
-        deleteBooking(bookingId);
-    };
+  const handleDelete = async (event, param) => {
+    deleteBooking(param.id);
+  };
+
+  const columns = [
+    { field: "id", headerName: "ID", width: 70 },
+    { field: "movie", headerName: "Movie", width: 400 },
+    { field: "date", headerName: "Date", width: 200 },
+    { field: "delete", headerName: "Delete?", width: 120, 
+    renderCell: (cellValues) => {
+      return (
+        <Button
+          className="delete-button"
+          variant="contained"
+          color="error"
+          onClick={(event) => handleDelete(event, cellValues)}
+        >
+          Delete
+        </Button>
+      );
+    }, },
+  ];
+
+  const rows = bookings.map((booking) => ({
+    id: booking.id,
+    movie: booking.screening.movie.title,
+    date: `${timestampToDate(
+      booking.screening.startTimestamp
+    )} ${timestampToTime(booking.screening.startTimestamp)}`,
+  }));
 
   return (
     <div id="my-bookings-page-container">
       <div id="my-bookings-content-container">
         <h1>My Bookings</h1>
-        <table>
+        <div style={{ height: 400, width: "100%" }}>
+          <DataGrid rows={rows} columns={columns} pageSize={5} />
+        </div>
+
+        {/* <table>
           <thead>
             <tr>
               <th>Movie</th>
@@ -84,12 +116,14 @@ export default function MyBookings() {
                   {timestampToTime(booking.screening.startTimestamp)}
                 </td>
                 <td>
-                  <button onClick={() => handleDelete(booking.id)}>Delete</button>
+                  <button onClick={() => handleDelete(booking.id)}>
+                    Delete
+                  </button>
                 </td>
               </tr>
             ))}
           </tbody>
-        </table>
+        </table> */}
       </div>
     </div>
   );
