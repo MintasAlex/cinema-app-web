@@ -19,10 +19,31 @@ const getScreeningsByMovieId = (id) => {
   });
 };
 
+const addScreening = (data) => {
+  return axios.post(API_URL + "/screenings", data, {
+    headers: authHeader(),
+  });
+};
+
+const updateScreening = (id, data) => {
+  return axios.put(API_URL + `/screenings/${id}`, data, { 
+    headers: authHeader(),
+  });
+};
+
+const deleteScreening = (id) => {
+  return axios.delete(API_URL + `/screenings/${id}`, {
+    headers: authHeader(),
+  });
+};
+
 const screeningService = {
   getAllScreenings,
   getScreening,
   getScreeningsByMovieId,
+  addScreening,
+  updateScreening,
+  deleteScreening,
 };
 
 export default screeningService;

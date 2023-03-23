@@ -14,29 +14,29 @@ const getAllSeatsByCinemaHallId = (id) => {
 };
 
 const getAllBookedSeats = () => {
-  return axios.get(API_URL + "/seatBooked", { headers: authHeader() });
+  return axios.get(API_URL + "/seat-booked", { headers: authHeader() });
 };
 
 const getAllBookedSeatsByScreeningId = (id) => {
-  return axios.get(API_URL + `/seatBooked/screening/${id}`, {
+  return axios.get(API_URL + `/seat-booked/screening/${id}`, {
     headers: authHeader(),
   });
 };
 
 const getBookedSeatsByBookingId = (id) => {
-  return axios.get(API_URL + `/seatBooked/${id}`, {
+  return axios.get(API_URL + `/seat-booked/${id}`, {
     headers: authHeader(),
   });
 };
 
 const createSeatBooked = (seatBooked) => {
-  return axios.post(API_URL + `/seatBooked`, seatBooked, {
+  return axios.post(API_URL + `/seat-booked`, seatBooked, {
     headers: authHeader(),
   });
 };
 
 const deleteSeatBooked = (bookingId, seatId) => {
-  return axios.delete(API_URL + `/seatBooked/${bookingId}/${seatId}`, {
+  return axios.delete(API_URL + `/seat-booked/${bookingId}/${seatId}`, {
     headers: authHeader(),
   });
 };

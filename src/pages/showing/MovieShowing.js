@@ -61,7 +61,7 @@ export default function MovieShowing({ movie }) {
         <div id="poster-container">
           <img
             id="poster"
-            src={movie.picturePath !== null ? URL + movie.picturePath : placeHolderPoster}
+            src={(movie.picturePath !== null && movie.picturePath!=="") ? URL + movie.picturePath : placeHolderPoster}
             alt={movie.title + " poster"}
           />
         </div>

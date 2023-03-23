@@ -10,6 +10,7 @@ import NotFound from "./pages/notfound/NotFound";
 import MovieDetails from "./pages/movie/MovieDetails";
 import ScreeningDetails from "./pages/screening/ScreeningDetails";
 import MyBookings from "./pages/myBookings/MyBookings";
+import Admin from "./pages/admin/Admin";
 
 function App() {
   return (
@@ -23,6 +24,7 @@ function App() {
           <Route path="*" element={<NotFound></NotFound>} />
           <Route path="/screening/:id" element={<ScreeningDetails />} />
           <Route path="/mybookings" element={<MyBookings />} />
+          <Route path="/admin" element={<Admin></Admin>} />
         </Routes>
       </ThemeProvider>
     </>

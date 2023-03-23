@@ -40,6 +40,8 @@ export default function Header() {
       </div>
       {currentUser ? (
         <div className="user-container">
+          {currentUser.roles.includes("ROLE_ADMIN") && (
+            <Button className="button" variant="contained" onClick={() => navigate("/admin")}>Admin Panel</Button>)}
           <Button className="button" variant="contained" onClick={handleMyBookignsClick}>
             My Bookings
           </Button>

@@ -5,13 +5,7 @@ import { useState, useEffect } from "react";
 import AuthService from "../../services/auth-service";
 import MovieService from "../../services/movies-service";
 import TextField from "@mui/material/TextField";
-import FilterListIcon from "@mui/icons-material/FilterList";
 import {
-  Button,
-  Dialog,
-  DialogActions,
-  DialogTitle,
-  DialogContent,
   FormControl,
   InputLabel,
 } from "@mui/material";
