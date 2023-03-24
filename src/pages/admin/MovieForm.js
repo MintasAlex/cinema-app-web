@@ -1,7 +1,6 @@
 import { useState, useEffect } from "react";
 import MovieService from "../../services/movies-service";
 
-
 import { Button, TextField } from "@mui/material";
 import "./MovieForm.css";
 
@@ -55,7 +54,7 @@ export default function MovieForm({ movie }) {
         label="Title"
         value={title}
         onChange={(e) => setTitle(e.target.value)}
-        inputProps={{maxLength: 255}}
+        inputProps={{ maxLength: 255 }}
       />
 
       <TextField
@@ -79,7 +78,7 @@ export default function MovieForm({ movie }) {
         label="Score"
         value={score}
         onChange={(e) => setScore(e.target.value)}
-        inputProps={{maxLength: 3}}
+        inputProps={{ maxLength: 3 }}
       />
 
       <TextField
@@ -89,7 +88,7 @@ export default function MovieForm({ movie }) {
         label="Rating"
         value={rating}
         onChange={(e) => setRating(e.target.value)}
-        inputProps={{maxLength: 10}}
+        inputProps={{ maxLength: 10 }}
       />
 
       <TextField
@@ -107,7 +106,7 @@ export default function MovieForm({ movie }) {
         label="Picture Path"
         value={picturePath}
         onChange={(e) => setPicturePath(e.target.value)}
-        inputProps={{maxLength: 255}}
+        inputProps={{ maxLength: 255 }}
       />
 
       {movie ? (

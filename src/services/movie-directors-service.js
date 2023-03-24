@@ -4,7 +4,9 @@ import authHeader from "./auth-header";
 const API_URL = "http://localhost:8080";
 
 const getAllMovieDirectors = async () => {
-  return await axios.get(API_URL + "/movie-directors", { headers: authHeader() });
+  return await axios.get(API_URL + "/movie-directors", {
+    headers: authHeader(),
+  });
 };
 
 const getMovieDirectorByMovieId = async (id) => {
@@ -14,8 +16,8 @@ const getMovieDirectorByMovieId = async (id) => {
 };
 
 const movieDirectorService = {
-    getAllMovieDirectors,
-    getMovieDirectorByMovieId,
+  getAllMovieDirectors,
+  getMovieDirectorByMovieId,
 };
 
 export default movieDirectorService;

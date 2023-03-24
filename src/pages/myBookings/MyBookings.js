@@ -68,19 +68,23 @@ export default function MyBookings() {
     { field: "id", headerName: "ID", width: 70 },
     { field: "movie", headerName: "Movie", width: 400 },
     { field: "date", headerName: "Date", width: 200 },
-    { field: "delete", headerName: "Delete?", width: 120, 
-    renderCell: (cellValues) => {
-      return (
-        <Button
-          className="delete-button"
-          variant="contained"
-          color="error"
-          onClick={(event) => handleDelete(event, cellValues)}
-        >
-          Delete
-        </Button>
-      );
-    }, },
+    {
+      field: "delete",
+      headerName: "Delete?",
+      width: 120,
+      renderCell: (cellValues) => {
+        return (
+          <Button
+            className="delete-button"
+            variant="contained"
+            color="error"
+            onClick={(event) => handleDelete(event, cellValues)}
+          >
+            Delete
+          </Button>
+        );
+      },
+    },
   ];
 
   const rows = bookings.map((booking) => ({
@@ -98,32 +102,6 @@ export default function MyBookings() {
         <div style={{ height: 400, width: "100%" }}>
           <DataGrid rows={rows} columns={columns} pageSize={5} />
         </div>
-
-        {/* <table>
-          <thead>
-            <tr>
-              <th>Movie</th>
-              <th>Date</th>
-              <th>Delete?</th>
-            </tr>
-          </thead>
-          <tbody>
-            {bookings.map((booking) => (
-              <tr key={booking.id}>
-                <td>{booking.screening.movie.title}</td>
-                <td>
-                  {timestampToDate(booking.screening.startTimestamp)}{" "}
-                  {timestampToTime(booking.screening.startTimestamp)}
-                </td>
-                <td>
-                  <button onClick={() => handleDelete(booking.id)}>
-                    Delete
-                  </button>
-                </td>
-              </tr>
-            ))}
-          </tbody>
-        </table> */}
       </div>
     </div>
   );

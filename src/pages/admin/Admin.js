@@ -29,8 +29,6 @@ export default function Admin() {
   const [editOpen, setEditOpen] = useState(false);
   const [screeningOpen, setScreeningOpen] = useState(false);
   const [editScreeningOpen, setEditScreeningOpen] = useState(false);
-  const [deleteMovieOpen, setDeleteMovieOpen] = useState(false);
-  const [deleteScreeningOpen, setDeleteScreeningOpen] = useState(false);
 
   const [movie, setMovie] = useState({});
   const [screening, setScreening] = useState({});
@@ -103,7 +101,6 @@ export default function Admin() {
     ScreeningService.deleteScreening(event.row.id);
     window.location.reload();
   };
-
 
   useEffect(() => {
     getMovies();

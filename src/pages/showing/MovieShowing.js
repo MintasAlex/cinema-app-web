@@ -61,7 +61,11 @@ export default function MovieShowing({ movie }) {
         <div id="poster-container">
           <img
             id="poster"
-            src={(movie.picturePath !== null && movie.picturePath!=="") ? URL + movie.picturePath : placeHolderPoster}
+            src={
+              movie.picturePath !== null && movie.picturePath !== ""
+                ? URL + movie.picturePath
+                : placeHolderPoster
+            }
             alt={movie.title + " poster"}
           />
         </div>
@@ -78,18 +82,24 @@ export default function MovieShowing({ movie }) {
           <p id="movie-runtime">Runtime: {movie.runtimeMinutes}min</p>
           <p id="movie-score">Score: {movie.score}</p>
           <p id="movie-rating">{movie.rating}</p>
-          <p id="movie-actors"><b>Actors:</b> {movieActors.map((movieActor, index) => (
+          <p id="movie-actors">
+            <b>Actors:</b>{" "}
+            {movieActors.map((movieActor, index) => (
               <span key={index}>
                 {index > 0 && ", "}
                 {movieActor.name}
               </span>
-          ))}</p>
-          <p id="movie-directors"><b>Directors:</b> {movieDirectors.map((movieDirector, index) => (
+            ))}
+          </p>
+          <p id="movie-directors">
+            <b>Directors:</b>{" "}
+            {movieDirectors.map((movieDirector, index) => (
               <span key={index}>
                 {index > 0 && ", "}
                 {movieDirector.name}
               </span>
-          ))}</p>
+            ))}
+          </p>
         </div>
       </div>
     </>

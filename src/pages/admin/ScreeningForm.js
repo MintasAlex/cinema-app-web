@@ -1,17 +1,9 @@
 import { useState, useEffect } from "react";
-import {
-  Button,
-  FormControl,
-  InputLabel,
-  MenuItem,
-  Select,
-  TextField,
-} from "@mui/material";
+import { Button, FormControl, MenuItem, TextField } from "@mui/material";
 import ScreeningService from "../../services/screening-service";
 import MovieService from "../../services/movies-service";
 import CinemaHallService from "../../services/cinema-hall-service";
 import "./ScreeningForm.css";
-import { display } from "@mui/system";
 
 export default function ScreeningForm({ screening }) {
   const [movieId, setMovieId] = useState("");

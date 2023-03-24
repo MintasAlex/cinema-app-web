@@ -9,7 +9,7 @@
   width: 94%;
   height: 100%;
   background-color: var(--color-primary);
-  color: #FFFFFF;
+  color: #ffffff;
 }
 
 #poster-container {
@@ -22,7 +22,6 @@
   width: 70%;
   border-radius: 15px;
 }
-
 
 #movie-info-container {
   display: inline;
@@ -37,7 +36,10 @@
   font-weight: bolder;
 }
 
-#movie-genres, #movie-runtime, #movie-rating, #movie-score {
+#movie-genres,
+#movie-runtime,
+#movie-rating,
+#movie-score {
   display: inline;
   font-size: 1.1rem;
   padding-right: 30px;
@@ -45,5 +47,5 @@
 }
 
 .movie-container:hover {
-    background-color: rgba(75, 16, 108, 0.9);
+  background-color: rgba(75, 16, 108, 0.9);
 }

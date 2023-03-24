@@ -5,10 +5,7 @@ import { useState, useEffect } from "react";
 import AuthService from "../../services/auth-service";
 import MovieService from "../../services/movies-service";
 import TextField from "@mui/material/TextField";
-import {
-  FormControl,
-  InputLabel,
-} from "@mui/material";
+import { FormControl, InputLabel } from "@mui/material";
 import Select from "@mui/material/Select";
 import MenuItem from "@mui/material/MenuItem";
 import movieGenreService from "../../services/movie-genres-service.js";
@@ -63,7 +60,6 @@ export default function Showing() {
       (response) => {
         console.log(response.data);
         return response.data;
-        
       },
       (error) => {
         console.log(error);
@@ -92,11 +88,11 @@ export default function Showing() {
   const filteredMoviesByGenre = filteredMovies.filter((movie) => {
     if (searchGenre === "") return movie;
     else {
-        return movieGenres.some(
-          (movieGenre) =>
-            movieGenre.movieId === movie.id &&
-            movieGenre.genreName === searchGenre
-        ); 
+      return movieGenres.some(
+        (movieGenre) =>
+          movieGenre.movieId === movie.id &&
+          movieGenre.genreName === searchGenre
+      );
     }
   });
 

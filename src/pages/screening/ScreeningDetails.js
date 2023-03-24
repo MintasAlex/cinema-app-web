@@ -7,7 +7,6 @@ import SeatsService from "../../services/seats-service";
 import { Button } from "@mui/material";
 import { useNavigate } from "react-router-dom";
 
-
 export default function ScreeningDetails() {
   const [screening, setScreening] = useState(null);
   const [screeningSeats, setScreeningSeats] = useState([]);
@@ -16,7 +15,7 @@ export default function ScreeningDetails() {
   const user = JSON.parse(localStorage.getItem("user"));
 
   const navigate = useNavigate();
- 
+
   let seatsToBook = [];
 
   const URL = "http://localhost:3000/";

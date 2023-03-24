@@ -9,7 +9,11 @@ import {
 } from "@mui/material";
 import ScreeningForm from "./ScreeningForm";
 
-export default function ScreeningDialog({screening, editScreeningOpen, setEditScreeningOpen,}) {
+export default function ScreeningDialog({
+  screening,
+  editScreeningOpen,
+  setEditScreeningOpen,
+}) {
   const handleClose = () => {
     setEditScreeningOpen(false);
     window.location.reload();

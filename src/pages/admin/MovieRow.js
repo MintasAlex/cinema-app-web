@@ -23,16 +23,16 @@ const getRow = (movie) => {
     return directors;
   };
 
-   (async () => {
+  (async () => {
     const genre = await getMovieGenresByMovieId(movie.id);
     const cast = await getMovieActorsByMovieId(movie.id);
     const director = await getMovieDirectorsByMovieId(movie.id);
     movie.genre = genre;
     movie.cast = cast;
     movie.director = director;
-    })();
+  })();
 
-    return movie;
+  return movie;
 };
 
 const movieRow = {

@@ -8,12 +8,12 @@ const getAllCinemaHalls = () => {
 };
 
 const getCinemaHallById = (id) => {
-    return axios.get(API_URL + `/cinema-halls/${id}`, { headers: authHeader() });
-    };
+  return axios.get(API_URL + `/cinema-halls/${id}`, { headers: authHeader() });
+};
 
 const cinemaHallService = {
-    getAllCinemaHalls,
-    getCinemaHallById,
+  getAllCinemaHalls,
+  getCinemaHallById,
 };
 
 export default cinemaHallService;

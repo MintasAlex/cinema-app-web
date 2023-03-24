@@ -26,7 +26,7 @@ const addScreening = (data) => {
 };
 
 const updateScreening = (id, data) => {
-  return axios.put(API_URL + `/screenings/${id}`, data, { 
+  return axios.put(API_URL + `/screenings/${id}`, data, {
     headers: authHeader(),
   });
 };
