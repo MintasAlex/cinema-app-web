@@ -21,7 +21,7 @@ export default function Signup() {
 
   const handleSignup = async (e) => {
     e.preventDefault();
-    try { 
+    try {
       await AuthService.signup(username, email, password).then(
         async () => {
           try {
@@ -47,35 +47,39 @@ export default function Signup() {
     }
   };
 
-
-
   return (
     <>
       <div className="signup-container">
         <form className="signup-form-container" onSubmit={handleSignup}>
           <h1>Sign up</h1>
           <TextField
+            required
             className="textfield"
             id="signup-username-input"
             label="Username"
             value={username}
             onChange={(e) => setUsername(e.target.value)}
+            inputProps={{ maxLength: 36 }}
           />
           <TextField
+            required
             className="textfield"
             id="signup-email-input"
             label="Email"
             type="email"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
+            inputProps={{ maxLength: 100 }}
           />
           <TextField
+            required
             className="textfield"
             id="signup-password-input"
             label="Password"
             type="password"
             value={password}
             onChange={(e) => setPassword(e.target.value)}
+            inputProps={{ minLength: 8 }}
           />
           <Button className="button" variant="contained" type="submit">
             Sign Up

@@ -4,9 +4,7 @@ import React, { useState } from "react";
 import TextField from "@mui/material/TextField";
 import Button from "@mui/material/Button";
 
-import { Route } from "react-router-dom";
 import AuthService from "../services/auth-service";
-import Showing from "../pages/showing/Showing";
 import { useNavigate } from "react-router-dom";
 
 export default function Login() {
@@ -35,6 +33,7 @@ export default function Login() {
   return (
     <form className="login-form-container" onSubmit={handleLogin}>
       <TextField
+        required
         className="textfield"
         id="login-username-input"
         label="Username"
@@ -42,6 +41,7 @@ export default function Login() {
         onChange={(e) => setUsername(e.target.value)}
       />
       <TextField
+        required
         className="textfield"
         id="login-password-input"
         label="Password"
